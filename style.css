@@ -15,12 +15,14 @@ body {
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
   font-size: 1.6rem;
   width: 32rem;
   margin: 10rem auto;
   padding: 2.4rem;
   border-radius: 0.6rem;
-  box-shadow: 0 0.4rem 0.8rem 0.4rem rgba(24, 100, 171, 0.2);
+  box-shadow: 0 0.4rem 0.8rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
 .form-header {
@@ -32,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .form-item {
@@ -39,13 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  background-color: #1c7ed6;
-  padding: 1.2rem;
   border-radius: 0.6rem;
-}
-
-.form-item label {
-  color: #fff9db;
 }
 
 .form-item input {
@@ -54,23 +51,31 @@ body {
   border: none;
   outline: none;
   border-radius: 0.6rem;
-}
-
-.form-item input:focus {
+  box-shadow: inset 0 0 0 0.1rem #333;
 }
 
 .form-submit {
-  background-color: #fff;
-  align-items: center;
-  color: #1c7ed6;
-  border: 0.2rem solid currentColor;
-  font-weight: 700;
+  font-size: inherit;
+  padding: 0.8rem 2.4rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: #333;
+  color: #fff;
   cursor: pointer;
-  transition: all 200ms;
+  transition: all 300ms;
+  align-self: flex-end;
 }
 
 .form-submit:hover {
-  background-color: #1c7ed6;
-  color: #fff;
-  border-color: #1c7ed6;
+  background-color: #fff;
+  color: #333;
+  box-shadow: inset 0 0 0 0.1rem #333;
+}
+
+.form-item.valid input {
+  box-shadow: inset 0 0 0 0.1rem #2f9e44;
+}
+
+.form-item.invalid input {
+  box-shadow: inset 0 0 0 0.1rem #e03131;
 }
